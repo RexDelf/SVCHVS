@@ -6,7 +6,7 @@
 * **TG** @RexDelf
 
 ## Summary
-Proactive person and qick learner. Have excellent leadership skills and multi-tasking capabilities. Participated in the software development for the optical waveguide spectrometer.
+Proactive person and quick learner. Have excellent leadership skills and multi-tasking capabilities. Participated in the software development for the optical waveguide spectrometer.
 
 ## Skills
 * Java, C#
