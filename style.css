@@ -48,6 +48,9 @@ section {
     margin-bottom: 30px;
     line-height: 25px;
 }
+.icon {
+    margin: auto 5px auto 0px;
+}
 a {
     text-decoration: none;
     font-weight: bold;
