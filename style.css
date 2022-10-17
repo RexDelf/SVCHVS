@@ -60,6 +60,15 @@ a:hover {
     text-decoration: underline;
 }
 
+.socialmedia {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 @media (max-width: 1000px) {
     .content {
         width: 80%;
