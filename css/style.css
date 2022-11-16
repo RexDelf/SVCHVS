@@ -11,10 +11,6 @@ a{
     text-decoration: none;
 }
 
-ul{
-    list-style-type: none;
-}
-
 button{
     position: absolute;
     align-self: center;
@@ -59,7 +55,7 @@ button{
     right:120px;
 }
 
-.contacts-el li{
+.contacts-el{
     padding-right: 20px;
 }
 
@@ -122,7 +118,9 @@ button{
     align-items: center;
 }
 
-.menubar{
+nav{
+    display: flex;
+    flex-direction: row;
     overflow: hidden;
     display: flex;
     width: 433px;
@@ -130,22 +128,14 @@ button{
     height: inherit;
 }
 
-.menu-el{
-    display: flex;
-    flex-direction: row;
-}
-
-.menu-el *{
+nav a{
     font-family: 'Playfair Display';
     font-style: normal;
     font-weight: 400;
     font-size: 22px;
     line-height: 0px;
     color: #FFFFFF;
-}
-
-.menu-el li{
-    padding-right: 40px;
+    padding-right: 45px;
 }
 
 .logo{
