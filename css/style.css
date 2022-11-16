@@ -149,6 +149,7 @@ hgroup{
 
 .header-wrapper{
     width: 100%;
+    z-index: 1;
     position: absolute;
     display: flex;
     height:100px;
