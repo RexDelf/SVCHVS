@@ -1,12 +1,12 @@
 * {
     padding: 0;
     margin: 0;
+    font-weight: 400;
+    font-style: normal;
 }
 
 body{
     background: black;
-    font-style: normal;
-    font-weight: 400;
 }
 
 a{
@@ -27,7 +27,49 @@ button{
     letter-spacing: 0.5px;
 }
 
-.frame, .start {
+nav{
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    display: flex;
+    width: 433px;
+    align-items: center;
+    height: inherit;
+}
+
+nav a{
+    font-family: 'Playfair Display';
+    font-size: 22px;
+    line-height: 0px;
+    color: #FFFFFF;
+    padding-right: 45px;
+}
+
+h1{
+    font-size: 140px;
+    line-height: 154px;
+    max-width: 1200px; 
+    padding-bottom: 30px;
+}
+
+h2{
+    font-size: 24px;
+    line-height: 38px;
+}
+
+hgroup{
+    font-family: 'Playfair Display';
+    text-align: center;
+    color: #FFFFFF;
+
+    position: absolute;
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.frame, .frame-start {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -39,16 +81,13 @@ button{
 }
 
 .copyright{
-    position: absolute;
-    left:120px;
     display:flex;
     align-items: center;
     flex-direction: row;
 }
 
 .contacts{
-    position: absolute;
-    right:120px;
+    padding-right: 6px;
 }
 
 .contacts-el a{
@@ -61,10 +100,19 @@ button{
     font-size: 13px;
 
     color: #666666;
+
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width:100%;
+    max-width: 1200px;
+}
+
+.end-frame{
     display: flex;
     align-items: center;
-    align-self: center;
-    flex-direction: row;
+    justify-content: center;
+    flex-direction: column;
     height: 128px;
     width: 100%;
 }
@@ -74,11 +122,11 @@ button{
     flex-direction: row;
 }
 
-.start{
+.frame-start{
     height: 435px;
 }
 
-.start .text-frame{
+.frame-start hgroup{
     top: 120px;
 }
 
@@ -99,7 +147,7 @@ button{
     object-fit: cover;
 }
 
-.wrapper{
+.header-wrapper{
     width: 100%;
     position: absolute;
     display: flex;
@@ -109,56 +157,19 @@ button{
     align-items: center;
 }
 
-nav{
-    display: flex;
-    flex-direction: row;
-    overflow: hidden;
-    display: flex;
-    width: 433px;
-    align-items: center;
-    height: inherit;
-}
-
-nav a{
-    font-family: 'Playfair Display';
-    font-size: 22px;
-    line-height: 0px;
-    color: #FFFFFF;
-    padding-right: 45px;
-}
-
 .logo{
     padding-left: 40px;
     width: 120px;
     height: 44px;
 }
 
-.text-frame{
-    font-family: 'Playfair Display';
-    text-align: center;
-    color: #FFFFFF;
-
-    position: absolute;
-    display: flex;
-    align-self: center;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.main-text{
-    font-size: 140px;
-    line-height: 154px;
-    max-width: 1200px; 
-    padding-bottom: 30px;
-}
-
-.start .text-frame .main-text{
+.frame-start hgroup h1{
     font-size: 50px;
     line-height: 70px;
     padding-bottom: 5px;
 }
 
-.start .text-frame .secondary-text{
+.frame-start hgroup h2{
     font-size: 23px;
 }
 
@@ -166,12 +177,7 @@ nav a{
     line-height: 21px;
 }
 
-.secondary-text{
-    font-size: 24px;
-    line-height: 38px;
-}
-
-.start-project{
+.start-project-btn{
     bottom: 100px;
     background: white;
     height: 42px;
