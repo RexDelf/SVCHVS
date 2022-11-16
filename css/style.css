@@ -5,6 +5,8 @@
 
 body{
     background: black;
+    font-style: normal;
+    font-weight: 400;
 }
 
 a{
@@ -19,8 +21,6 @@ button{
     cursor: pointer;
 
     font-family: 'Lato';
-    font-style: normal;
-    font-weight: 400;
     line-height: 24px;
 
     text-align: center;
@@ -38,10 +38,6 @@ button{
     line-height: 28px;
 }
 
-.author{
-    padding-left:5px;
-}
-
 .copyright{
     position: absolute;
     left:120px;
@@ -55,18 +51,13 @@ button{
     right:120px;
 }
 
-.contacts-el{
-    padding-right: 20px;
-}
-
-.contacts-el *{
+.contacts-el a{
     color: #666666;
+    padding-right: 20px;
 }
 
 .end-content{
     font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 400;
     font-size: 13px;
 
     color: #666666;
@@ -130,8 +121,6 @@ nav{
 
 nav a{
     font-family: 'Playfair Display';
-    font-style: normal;
-    font-weight: 400;
     font-size: 22px;
     line-height: 0px;
     color: #FFFFFF;
@@ -146,8 +135,6 @@ nav a{
 
 .text-frame{
     font-family: 'Playfair Display';
-    font-style: normal;
-    font-weight: 400;
     text-align: center;
     color: #FFFFFF;
 
@@ -175,6 +162,10 @@ nav a{
     font-size: 23px;
 }
 
+.date{
+    line-height: 21px;
+}
+
 .secondary-text{
     font-size: 24px;
     line-height: 38px;
@@ -184,6 +175,7 @@ nav a{
     bottom: 100px;
     background: white;
     height: 42px;
+    border:none;
     width: 186px;
 
     font-size: 14px;
