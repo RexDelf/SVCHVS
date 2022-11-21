@@ -86,10 +86,6 @@ hgroup{
     flex-direction: row;
 }
 
-.contacts{
-    padding-right: 6px;
-}
-
 .contacts-el a{
     color: #666666;
     padding-right: 20px;
