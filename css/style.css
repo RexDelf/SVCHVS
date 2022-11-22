@@ -30,20 +30,32 @@ button{
 
 nav{
     display: flex;
-    flex-direction: row;
     overflow: hidden;
-    display: flex;
-    width: 433px;
     align-items: center;
+    justify-content: end;
     height: inherit;
 }
 
-nav a{
+.nav-row{
+    flex-direction: row;
+    display: flex;
+    width: 433px;
+    align-items: center;
+}
+
+.nav-row a{
     font-family: 'Playfair Display';
     font-size: 22px;
     line-height: 0px;
     color: #FFFFFF;
     padding-right: 45px;
+}
+
+.nav-burger{
+    display: none;
+    height: 32px;
+    width: 32px;
+    padding-right: 20px;
 }
 
 h1{
@@ -128,8 +140,11 @@ hgroup{
     top: 120px;
 }
 
-.single-img {
+.single-img{
     z-index: -1;
+}
+
+.single-img picture {  
     margin: auto;
     display: flex;
     width:100%;
@@ -137,7 +152,7 @@ hgroup{
     justify-content: center;
 }
 
-.single-img img{
+.single-img picture img{
     opacity: 0.8;
     height: auto;
     width: 100%;
@@ -160,6 +175,11 @@ hgroup{
     padding-left: 40px;
     width: 120px;
     height: 44px;
+}
+
+.logo img{
+    width: inherit;
+    height: inherit;
 }
 
 .frame-start h1{
@@ -197,7 +217,7 @@ hgroup{
     color: #FFFFFF;
 }
 
-@media screen and (min-device-width: 768px)
+@media screen and (min-device-width: 600px)
 and (max-device-width: 1024px) {
   h1{
     font-size: 80px;
@@ -236,9 +256,86 @@ and (max-device-width: 1024px) {
   }
 }
 
-@media screen and (max-device-width: 767px)
+@media screen and (max-device-width: 600px)
 and (orientation: portrait) {
-  h1 {
-    font-size: 35px;
-  }
+    h1 {
+        font-size: 35px;
+        line-height: 50px;
+        padding-bottom: 10px;
+    }
+
+    h2{
+        font-size: 16px;
+        line-height: 16px;
+    }
+
+    hgroup{
+        transform: translate(0, -50%);
+    }
+
+    .logo{
+        padding-left: 20px;
+        width: 80px;
+        height: 30px;
+    }
+
+    .header-wrapper{
+        height: 70px;
+    }
+
+    .nav-row{
+        display: none;
+    }
+
+    .nav-burger{
+        display: flex;
+    }
+
+    .frame-start h1{
+        font-size: 30px;
+        line-height: 40px;
+        padding-bottom: 10px;
+    }
+
+    .frame-start h2{
+        font-size: 16px;
+        line-height: 16px;
+    }
+    
+    .contacts-el{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contacts-el a{
+        padding-right: 0px;
+    }
+
+    .view-project{
+        bottom: 160px;
+    }
+
+    .start-project-btn{
+        bottom: 60px;
+        height: 42px;
+        width: 186px;
+
+      }
+
+    .frame-start{
+        height: 320px;
+    }
+
+    .frame-start hgroup{
+        padding-bottom: 31px;
+    }
+
+    .end-frame{
+        height: 230px;
+    }
+
+    .end-content{
+        font-size: 11px;
+        justify-content: center;
+    }
 }
