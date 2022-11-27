@@ -5,6 +5,10 @@
     font-style: normal;
 }
 
+html{
+    scroll-snap-type: y mandatory;
+}
+
 body{
     background: black;
 }
@@ -41,14 +45,24 @@ nav{
     display: flex;
     width: 433px;
     align-items: center;
+    padding-left: 10px;
 }
 
-.nav-row a{
+.nav-btn-disabled{
     font-family: 'Playfair Display';
     font-size: 22px;
     line-height: 0px;
     color: #FFFFFF;
     padding-right: 45px;
+}
+
+.nav-btn-enabled{
+    font-weight: bold;
+    text-shadow: 0 0 10px #fff;
+}
+
+.nav-btn-disabled:hover{
+    text-shadow: 0 0 10px #fff;
 }
 
 .nav-burger{
@@ -83,6 +97,8 @@ hgroup{
 }
 
 .frame, .frame-start {
+    scroll-snap-align: start;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -196,6 +212,10 @@ hgroup{
     line-height: 21px;
 }
 
+.start-project-card{
+    scroll-snap-align: end;
+}
+
 .start-project-btn{
     bottom: 100px;
     background: white;
@@ -215,6 +235,129 @@ hgroup{
     border: 1px solid #FFFFFF;
     background: none;
     color: #FFFFFF;
+}
+
+/* Interactive Elements */
+
+#scroll-to-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 1;
+    border: none;
+    outline: none;
+    background-color: white;
+    color: white;
+    cursor: pointer;
+    height: 50px;
+    width: 50px;  
+    padding: 15px;
+    border-radius: 50%;
+}
+
+.arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+
+.up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+
+/* Sound toggle button */
+
+#toggle-audio{
+    display: block;
+    position: fixed;
+    bottom: 20px;
+	left: 30px;
+    width: 55px;
+	height: 55px;
+    z-index: 1;
+}
+
+.toggle-sound {  
+	background-color: none;
+    line-height: 55px;
+    text-align: center;
+    color: #fff;
+	border-radius: 50%;
+	cursor: pointer;
+}
+.toggle-sound.sound-mute {
+	box-shadow: none;
+}
+
+.sound {
+	width: 97%;
+	height: 100%;
+	position: absolute;
+	cursor: pointer;
+	display: inline-block;
+	left: 0;
+	top: 0;
+	margin-left: -15%;
+}
+.sound-icon {
+	color: inherit;
+	line-height: inherit;
+	font-size: 1.6rem;
+	display: block;
+	margin: auto;
+	text-align: left;
+    margin-right: 5%;
+    padding-top: 28%;
+}
+.sound-wave {
+	position: absolute;
+	border: 2px solid transparent;
+	border-right: 2px solid #fff;
+	border-radius: 50%;
+	transition: all 100ms;
+	margin: auto;
+    padding-left: 5px;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.sound-wave_one {
+    width: 22.5%;
+    height: 20%;
+}
+.sound-wave_two {
+    width: 35%;
+    height: 31%;
+}
+.sound-wave_three {
+    width: 47.5%;
+    height: 40%;
+}
+
+.sound-mute .sound-wave {
+    border-radius: 0;
+    width: 17.5%;
+    height: 17.5%;
+    border-width: 0 2px 0 0;
+    left: 5px;
+}
+.sound-mute .sound-wave_one {
+  -webkit-transform: rotate(45deg) translate(0, -75%);
+          transform: rotate(45deg) translate(0, -75%);
+}
+.sound-mute .sound-wave_two {
+  -webkit-transform: rotate(-45deg) translate(0, 75%);
+          transform: rotate(-45deg) translate(0, 74%);
+}
+.sound-mute .sound-wave_three {
+    opacity: 0;
+    transform: translateX(-46%);
+    height: 10%;
 }
 
 @media screen and (min-device-width: 600px)
@@ -320,7 +463,7 @@ and (orientation: portrait) {
         height: 42px;
         width: 186px;
 
-      }
+    }
 
     .frame-start{
         height: 320px;
