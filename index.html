@@ -13,16 +13,26 @@
     </head>
     <body>
         <header>
-            <div class="header-wrapper" >
-                <div class="logo">
-                    <img src="img/icons/logo.svg">
+            <div class="header-wrapper" data-dark-mode="elem">
+                <div class="logo-lang-group">
+                    <div class="logo">
+                        <img src="img/icons/logo.svg">
+                    </div>
+                    <div class="language">
+                        <div id = "english" class="switch-hidden" onclick = "changeLanguage('english')">EN</div>
+                        <div id="russian" class="switch-hidden" onclick = "changeLanguage('russian')">RU</div>
+                    </div>
+                    <div class = "theme-switch">
+                        <div class="fa fa-sun switch-hidden light" onclick = "changeTheme('light')"></div>
+                        <div class="fa fa-moon switch-hidden dark" onclick = "changeTheme('dark')"></div>
+                    </div>
                 </div>
                 <nav>
                     <div class = "nav-row">
-                        <a href="#" class = "nav-btn-disabled" onclick="clicked(this)">Work</a>
-                        <a href="#" class = "nav-btn-disabled" onclick="clicked(this)">About</a>
-                        <a href="#" class = "nav-btn-disabled" onclick="clicked(this)">Blog</a>
-                        <a href="#" class = "nav-btn-disabled" onclick="clicked(this)">Contact</a>
+                        <a href="#" class = "nav-btn-disabled" onclick="clicked(this)" data-locale="nav.work">Work</a>
+                        <a href="#" class = "nav-btn-disabled" onclick="clicked(this)" data-locale="nav.about">About</a>
+                        <a href="#" class = "nav-btn-disabled" onclick="clicked(this)" data-locale="nav.blog">Blog</a>
+                        <a href="#" class = "nav-btn-disabled" onclick="clicked(this)" data-locale="nav.contacts">Contacts</a>
                     </div>
                     <div class = "nav-burger">
                         <img src="img/icons/burger-icon.svg">
@@ -31,11 +41,11 @@
             </div>
         </header>
         <main class="project-cards">
-            <button onclick="topFunction()" id="scroll-to-top" title="Go to top"><div class="arrow up"></div></button>
+            <button onclick="topFunction()" id="scroll-to-top" class="controls-hidden" title="Go to top" data-dark-mode="elem"><div class="arrow up"></div></button>
 
-            <div onclick="toggleAudio()" id="toggle-audio" title="Toggle audio">
+            <div onclick="toggleAudio()" id="toggle-audio" data-dark-mode="elem" title="Toggle audio">
                 <div class="unmuted toggle-sound sound-mute"  href="#">
-                    <div class="sound" data-tooltip="Turn On/Off Sound">
+                    <div class="sound">
                         <div class="sound-icon fa fa-volume-off"></div>
                         <div class="sound-wave sound-wave_one"></div>
                         <div class="sound-wave sound-wave_two"></div>
@@ -46,107 +56,83 @@
             
             <section class="view-project-cards">
                 <article class="frame">
-                    <hgroup>
-                        <h1>
-                            Style & Beauty
-                        </h1>
-                        <h2>
-                            New fashion brand
-                        </h2>
+                    <hgroup data-dark-mode="elem">
+                        <h1 data-locale="frame.sab.h1"></h1>
+                        <h2 data-locale="frame.sab.h2"></h2>
                     </hgroup>
-                    <button class="view-project">VIEW PROJECT</button>
+                    <button class="view-project" data-locale="button.view" data-dark-mode="elem"></button>
                     <div class="single-img">
                         <picture>
                             <source media="(max-device-width: 600px) and (orientation: portrait)" srcset="img/pictures/sab-320w.png" />
                             <source media="(max-device-width: 1024px)" srcset="img/pictures/sab-768w.png" />
-                            <img src="img/pictures/sab-desktop.png" alt="Style & Beauty" />
+                            <img src="img/pictures/sab-desktop.png" alt="Style & Beauty" data-dark-mode="background" />
                         </picture>
                     </div>
                 </article>
                 <article class="frame">
-                    <hgroup>
-                        <h1>
-                            Living Room Girls
-                        </h1>
-                        <h2>
-                            Interior Design - Red Room
-                        </h2>
+                    <hgroup data-dark-mode="elem">
+                        <h1 data-locale="frame.lrg.h1"></h1>
+                        <h2 data-locale="frame.lrg.h2"></h2>
                     </hgroup>
-                    <button class="view-project">VIEW PROJECT</button>
+                    <button class="view-project" data-locale="button.view" data-dark-mode="elem"></button>
                     <div class="single-img">
                         <picture>
                             <source media="(max-device-width: 600px) and (orientation: portrait)" srcset="img/pictures/lrg-320w.png" />
                             <source media="(max-device-width: 1024px)" srcset="img/pictures/lrg-768w.png" />
-                            <img src="img/pictures/lrg-desktop.png" alt="Style & Beauty" />
+                            <img src="img/pictures/lrg-desktop.png" alt="Style & Beauty" data-dark-mode="background"/>
                         </picture>
                     </div>
                 </article>
                 <article class="frame">
-                    <hgroup>
-                        <h1>
-                            The shape of water flowers
-                        </h1>
-                        <h2>
-                            Book Cover
-                        </h2>
+                    <hgroup data-dark-mode="elem">
+                        <h1 data-locale="frame.tsowf.h1"></h1>
+                        <h2 data-locale="frame.tsowf.h2"></h2>
                     </hgroup>
-                    <button class="view-project">VIEW PROJECT</button>
+                    <button class="view-project" data-locale="button.view" data-dark-mode="elem"></button>
                     <div class="single-img">
                         <picture>
                             <source media="(max-device-width: 600px) and (orientation: portrait)" srcset="img/pictures/tsowf-320w.png" />
                             <source media="(max-device-width: 1024px)" srcset="img/pictures/tsowf-768w.png" />
-                            <img src="img/pictures/tsowf-desktop.png" alt="Style & Beauty" />
+                            <img src="img/pictures/tsowf-desktop.png" alt="Style & Beauty" data-dark-mode="background"/>
                         </picture>
                     </div>
                 </article>
                 <article class="frame">
-                    <hgroup>
-                        <h1>
-                            Capturing the sunlight
-                        </h1>
-                        <h2>
-                            Fashion Photoshoot
-                        </h2>
+                    <hgroup data-dark-mode="elem">
+                        <h1 data-locale="frame.cts.h1"></h1>
+                        <h2 data-locale="frame.cts.h2"></h2>
                     </hgroup>
-                    <button class="view-project">VIEW PROJECT</button>
+                    <button class="view-project" data-locale="button.view" data-dark-mode="elem"></button>
                     <div class="single-img">
                         <picture>
                             <source media="(max-device-width: 600px) and (orientation: portrait)" srcset="img/pictures/cts-320w.png" />
                             <source media="(max-device-width: 1024px)" srcset="img/pictures/cts-768w.png" />
-                            <img src="img/pictures/cts-desktop.png" alt="Style & Beauty" />
+                            <img src="img/pictures/cts-desktop.png" alt="Style & Beauty" data-dark-mode="background"/>
                         </picture>
                     </div>
                 </article>
                 <article class="frame">
-                    <hgroup>
-                        <h1>
-                            Looking on the other side
-                        </h1>
-                        <h2>
-                            Portrait photography
-                        </h2>
+                    <hgroup data-dark-mode="elem">
+                        <h1 data-locale="frame.lotos.h1"></h1>
+                        <h2 data-locale="frame.lotos.h2"></h2>
                     </hgroup>
-                    <button class="view-project">VIEW PROJECT</button>
+                    <button class="view-project" data-locale="button.view" data-dark-mode="elem"></button>
                     <div class="single-img">
                         <picture>
                             <source media="(max-device-width: 600px) and (orientation: portrait)" srcset="img/pictures/lotos-320w.png" />
                             <source media="(max-device-width: 1024px)" srcset="img/pictures/lotos-768w.png" />
-                            <img src="img/pictures/lotos-desktop.png" alt="Style & Beauty" />
+                            <img src="img/pictures/lotos-desktop.png" alt="Style & Beauty" data-dark-mode="background"/>
                         </picture>
                     </div>
                 </article>
             </section>
-            <section class="start-project-card">
+            <section class="start-project-card" data-dark-mode="elem">
                 <article class="frame-start">
                     <hgroup>
-                        <h1>
-                            Let's do something amazing.
-                        </h1>
-                        <h2>
-                            Get in touch with us today
-                        </h2>
+                        <h1 data-locale="frame.start.h1"></h1>
+                        <h2 data-locale="frame.start.h2"></h2>
                     </hgroup>
-                    <button class="start-project-btn">START A PROJECT</button>
+                    <button class="start-project-btn" data-locale="button.start"></button>
                 </article>
             </section>
         </main>
@@ -171,7 +157,10 @@
         </footer>
         <script src="scripts/pages.js"></script>
         <script src="scripts/sound.js"></script>
+        <script src="scripts/common.js"></script>
+        <script src="scripts/lang.js"></script>
         <script src="scripts/nav_btn.js"></script>
         <script src="scripts/back_to_top.js"></script>
+        <script src="scripts/switch_theme.js"></script>
     </body>
 </html>

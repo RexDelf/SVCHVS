@@ -1,12 +1,10 @@
 let backToTop = document.getElementById("scroll-to-top");
 
-window.onscroll = function() {scrollFunction(window.innerHeight - 1); hideAudioButton()};
-
-function scrollFunction(wheight) {
-    if (document.documentElement.scrollTop > wheight) {
-        backToTop.style.display = "block";
+function scrollFunction() {
+    if (document.documentElement.scrollTop > wheight && document.documentElement.scrollTop < scrollHeight - wheight - footerHeight) {
+        backToTop.classList.remove("controls-hidden");
     } else {
-        backToTop.style.display = "none";
+        backToTop.classList.add("controls-hidden");
     }
 }
 
