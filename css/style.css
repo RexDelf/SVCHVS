@@ -50,7 +50,7 @@ nav{
 }
 
 .dark-mode-element{
-    filter: brightness(80%);
+    filter: brightness(85%);
     text-shadow: 0px 0px 100px black;
 }
 
@@ -288,6 +288,7 @@ hgroup{
 }
 
 .start-project-btn{
+    transition: all .25s ease-out;
     bottom: 100px;
     background: white;
     height: 42px;
@@ -297,7 +298,14 @@ hgroup{
     font-size: 14px;
 }
 
+.start-project-btn:hover{
+    height: 50px;
+    width: 200px;
+    bottom: 96px;
+}
+
 .view-project{
+    transition: all .25s linear;
     bottom: 80px;
     height: 44px;
     width: 160px;
@@ -306,6 +314,11 @@ hgroup{
     border: 1px solid #FFFFFF;
     background: none;
     color: #FFFFFF;
+}
+
+.view-project:hover{
+    color: black;
+    background-color: white;
 }
 
 /* Interactive Elements */
