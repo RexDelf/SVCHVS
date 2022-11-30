@@ -444,8 +444,8 @@ hgroup{
     height: 10%;
 }
 
-@media screen and (min-device-width: 600px)
-and (max-device-width: 1024px) {
+@media screen and (min-width: 600px)
+and (max-width: 1024px) {
   h1{
     font-size: 80px;
     max-width: 720px;
@@ -483,7 +483,7 @@ and (max-device-width: 1024px) {
   }
 }
 
-@media screen and (max-device-width: 600px)
+@media screen and (max-width: 600px)
 and (orientation: portrait) {
     h1 {
         font-size: 35px;
