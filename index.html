@@ -18,7 +18,10 @@
                 <div class="searchbar-container">
                     <div class="searchbar">
                         <input type="text" placeholder="Search on Flickr">
-                        <button id="search-btn" onclick="getPhotos(searchBar.value)"><i class="fa fa-magnifying-glass"></i></button>
+                        <div class="searchbar-btns">
+                            <button id="clear-btn" onclick="clearSearchField()"><i class="fa-solid fa-xmark"></i></button>
+                            <button id="search-btn" onclick="getPhotos(searchBar.value)"><i class="fa fa-magnifying-glass"></i></button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -26,7 +29,12 @@
         <main>
             <div class="image-collection-container">
                 <div class="image-collection">
-                    
+                    <template id="image-card">
+                        <div class="img-element">
+                            <img src="">
+                            <div class="img-title"></div>
+                        </div>
+                    </template>
                 </div>
             </div>
         </main>

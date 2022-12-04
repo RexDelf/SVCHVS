@@ -36,7 +36,41 @@ header{
 }
 
 .image-collection{
-    max-width: 90vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 90%;
+}
+
+.img-element{
+    width: calc(25% - 10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding: 5px;
+}
+
+.img-element img{
+    object-fit: cover;
+    border-radius: 15px;
+    aspect-ratio: 1/1;
+    width: 100%;
+}
+
+.img-title{
+    background-color: rgb(0, 0, 0, 0.5);
+    padding: 5px 0px 5px 0px;
+    position: absolute;
+    color: white;
+    width: calc(22.5% - 10px);
+    text-align: center;
+    font-family: Open Sans;
+    opacity: 0;
+    transition: all 0.2s ease-out;
+}
+
+.img-element:hover .img-title{
+    opacity: 1;
 }
 
 .searchbar-container{
@@ -53,6 +87,7 @@ header{
     height: 30px;
     justify-content: end;
     align-items: center;
+    transition: all .1s ease-out;
 }
 
 .searchbar input[type=text] {
@@ -67,17 +102,23 @@ header{
 }
 
 .searchbar:focus-within {
-    transition: all .1s ease-out;
     height: 40px;
     width: 51%;
 }
 
-#search-btn{
-    position: absolute;
-    padding-right: 20px;
-    height: 100%;
+.searchbar-btns *{
+    font-size: 18px;
     background: transparent;
     color:gray;
     border: none;
-    aspect-ratio: 1/1;
+}
+
+.searchbar-btns{
+    position: absolute;
+    padding-right: 30px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    width: 50px;
+    justify-content: space-between;
 }
