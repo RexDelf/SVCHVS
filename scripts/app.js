@@ -1,47 +1,54 @@
-let footerHeight = document.querySelector('footer').offsetHeight / 1.25;
-let wheight = window.innerHeight - 1;
-let scrollHeight = document.documentElement.scrollHeight;
+const API_URL = "https://api.flickr.com/services/rest/";
+const API_KEY = "ecb3fb49c79846a95515e819fb1591e3";
+const imagesElement = document.querySelector(".image-collection");
 
-let storage_lang = 'english';
-let storage_theme = 'light';
+let options = { 
+    "api_key": API_KEY,
+    "method": "flickr.photos.search",
+    "format": "json",
+    "text": "marvel",
+    "nojsoncallback": 1
+  }
 
-window.onresize = function() {
-    footerHeight = document.querySelector('footer').offsetHeight / 1.25;
-    wheight = window.innerHeight - 1;
-    scrollHeight = document.documentElement.scrollHeight;
+async function getPhotos() {
+
+    let url = createURL();
+
+    const data = await fetch(
+        url, 
+        {
+            method:"GET",
+            headers : {
+            Accept: "application/json",
+            }
+        }
+    );
+
+    const result=await data.json();
+
+    var _s = result.photos.photo;
+    for(var z = 0 ; z < result.photos.photo.length ; z++)
+    {
+        var CurrentPhotoUrl = 'https://live.staticflickr.com/'+_s[z]['server']+'/'+_s[z]['id']+'_'+_s[z]['secret']+'_q.jpg';
+        let el = document.createElement("img");
+        el.src = CurrentPhotoUrl;
+        imagesElement.appendChild(el);
+    } 
 };
 
-window.onscroll = function() {
-    checkState();
-};
+function createURL(){
+    let url = API_URL;
 
-window.onload = function(){
-    createSmoothTranstion();
-    checkState();
-    getLocalStorage();
-    changeTheme(storage_theme);
-    changeLanguage(storage_lang);
+    first = true;
+
+    for (item in options) {
+        if (options.hasOwnProperty(item)) {
+        url += (first ? "?" : "&") + item + "=" + options[item];
+        first = false;
+        }
+    }
+
+    return url;
 }
 
-window.addEventListener('beforeunload', setLocalStorage);
-
-function checkState(){
-    scrollFunction(); 
-    hideAudioButton();
-}
-
-function setLocalStorage(){
-    localStorage.setItem('lang', storage_lang);
-    localStorage.setItem('theme', storage_theme);
-}
-
-function getLocalStorage(){
-    storage_lang = localStorage.getItem('lang');
-    storage_theme = localStorage.getItem('theme');
-}
-
-function createSmoothTranstion(){
-    themedElements.forEach(el => {
-        el.classList.add("smooth-theme-transition")
-    });
-}
+getPhotos();
