@@ -1,16 +1,20 @@
 const API_URL = "https://api.flickr.com/services/rest/";
 const API_KEY = "ecb3fb49c79846a95515e819fb1591e3";
 const imagesElement = document.querySelector(".image-collection");
+const searchBar = document.querySelector(".searchbar input");
 
 let options = { 
     "api_key": API_KEY,
     "method": "flickr.photos.search",
     "format": "json",
-    "text": "marvel",
+    "text": "",
     "nojsoncallback": 1
   }
 
-async function getPhotos() {
+async function getPhotos(input) {
+    options.text = input;
+
+    imagesElement.innerHTML = "";
 
     let url = createURL();
 
@@ -51,4 +55,9 @@ function createURL(){
     return url;
 }
 
-getPhotos();
+searchBar.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        document.getElementById("search-btn").click();
+    }
+});
