@@ -5,6 +5,15 @@
 
 body{
     background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a{
+    text-decoration: none;
+    color: white;
 }
 
 header{
@@ -20,7 +29,7 @@ header{
     display: inherit;
     flex-direction: inherit;
     align-items: inherit;
-    width: 95vw;
+    width: 90%;
 }
 
 .logo{
@@ -121,4 +130,28 @@ header{
     align-items: center;
     width: 50px;
     justify-content: space-between;
+}
+.footer{
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+}
+
+.footer-container{
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.author{
+    font-family: sans-serif;
+    letter-spacing: 0.05em;
+}
+
+.github{
+    font-size: 32px;
 }

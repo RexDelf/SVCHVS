@@ -3,21 +3,29 @@ const API_KEY = "ecb3fb49c79846a95515e819fb1591e3";
 const imagesElement = document.querySelector(".image-collection");
 const searchBar = document.querySelector(".searchbar input");
 const template = document.querySelector("#image-card");
+let currentPage = 1;
+let lastInput = "";
 
 let options = { 
     "api_key": API_KEY,
     "method": "flickr.photos.search",
     "format": "json",
     "text": "",
-    "nojsoncallback": 1
-  }
+    "nojsoncallback": 1,
+    "page": currentPage
+}
 
-async function getPhotos(input) {
+async function getPhotos(input, page) {
+    if(input !== lastInput){
+        imagesElement.innerHTML = "";
+    }
+    
     if(input){
         options.text = input;
+        lastInput = input;
+        options.page = page;
+        currentPage = page;
     }
-
-    imagesElement.innerHTML = "";
 
     let url = createURL();
 
@@ -31,15 +39,15 @@ async function getPhotos(input) {
         }
     );
 
-    const result=await data.json();
+    const result = await data.json();
 
-    var _s = result.photos.photo;
-    for(var z = 0 ; z < result.photos.photo.length ; z++)
+    var images = result.photos.photo;
+    for(var i = 0 ; i < result.photos.photo.length ; i++)
     {
-        var currentURL = 'https://live.staticflickr.com/'+_s[z]['server']+'/'+_s[z]['id']+'_'+_s[z]['secret']+'_w.jpg';
+        var currentURL = 'https://live.staticflickr.com/'+images[i]['server']+'/'+images[i]['id']+'_'+images[i]['secret']+'_w.jpg';
         let imgCard = template.content.cloneNode(true);
         imgCard.querySelector("img").src = currentURL;
-        imgCard.querySelector(".img-title").innerHTML = _s[z]['title'];
+        imgCard.querySelector(".img-title").innerHTML = images[i]['title'];
         imagesElement.appendChild(imgCard);
     } 
 };
@@ -78,3 +86,10 @@ window.onload = function () {
     searchBar.focus();
     searchBar.select();
 }
+
+window.onscroll = function(event) {
+    if ((window.innerHeight + window.scrollY + 1) >= document.body.offsetHeight) {
+        event.preventDefault();
+        getPhotos(lastInput, ++currentPage);
+    }
+};

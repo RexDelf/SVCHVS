@@ -20,7 +20,7 @@
                         <input type="text" placeholder="Search on Flickr">
                         <div class="searchbar-btns">
                             <button id="clear-btn" onclick="clearSearchField()"><i class="fa-solid fa-xmark"></i></button>
-                            <button id="search-btn" onclick="getPhotos(searchBar.value)"><i class="fa fa-magnifying-glass"></i></button>
+                            <button id="search-btn" onclick="getPhotos(searchBar.value, 1)"><i class="fa fa-magnifying-glass"></i></button>
                         </div>
                     </div>
                 </div>
@@ -38,8 +38,13 @@
                 </div>
             </div>
         </main>
-        <footer>
-            
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="author">Dominic Malyukov, 2022</div>
+                <a class="github" href="https://github.com/RexDelf/">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+            </div>
         </footer>
         <script src="scripts/app.js"></script>
     </body>
