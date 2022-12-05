@@ -27,13 +27,14 @@ header{
 
 .header-container{
     display: inherit;
-    flex-direction: inherit;
+    flex-direction: space-between;
     align-items: inherit;
     width: 90%;
 }
 
 .logo{
     color: white;
+    width: 300px;
     font-size: 48px;
     font-family: Lato;
     font-weight: bold;
@@ -83,20 +84,20 @@ header{
 }
 
 .searchbar-container{
-    position: absolute;
-    width: inherit;
+    width: 70%;
+    height: 30px;
     display: flex;
     justify-content: center;
+    transition: all .1s ease-out;
 }
 
 .searchbar{
     display: flex;
     flex-direction: row;
-    width: 50%;
-    height: 30px;
+    width: 100%;
+    height: 100%;
     justify-content: end;
     align-items: center;
-    transition: all .1s ease-out;
 }
 
 .searchbar input[type=text] {
@@ -110,22 +111,29 @@ header{
     font-size: 18px;
 }
 
-.searchbar:focus-within {
+.searchbar-container:focus-within {
     height: 40px;
-    width: 51%;
+    width: 71%;
 }
 
 .searchbar-btns *{
     font-size: 18px;
     background: transparent;
-    color:gray;
     border: none;
+    cursor: pointer;
+}
+
+.searchbar-btns *:not(*:hover){
+    color: gray;
+}
+
+#clear-btn:hover{
+    color: red;
 }
 
 .searchbar-btns{
     position: absolute;
     padding-right: 30px;
-    height: 100%;
     display: flex;
     align-items: center;
     width: 50px;
@@ -150,6 +158,7 @@ header{
 .author{
     font-family: sans-serif;
     letter-spacing: 0.05em;
+    font-size: 14px;
 }
 
 .github{
