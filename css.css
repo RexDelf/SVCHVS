@@ -4,6 +4,10 @@
 }
 
 .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 70%;
   margin: 0 auto;
   padding-top: 30px;
@@ -12,22 +16,31 @@
 
 .keyboard-input{
   width: 100%;
-  height: calc(100vh - 350px);
+  height: 50vh;
+  margin-bottom: 30px;
 }
 
 /*Keyboard*/
 
+.keyboard-back{
+  background-color:rgb(225, 225, 225);
+  width: 70%;
+  padding: 15px;
+  border-radius: 15px;
+}
 
 .keyboard {
-  margin-top: 30px;
-
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: grid;
   grid-template-columns: repeat(15, 1fr);
-  grid-gap: 10px;
-
+  grid-gap: 5px;
 }
 
 .key{
+   display: flex;
+   box-shadow: 0px 1px black;
+   justify-content: center;
+   align-items: center;
    cursor: pointer;
    border: 3px solid transparent;  
    color: white;
@@ -36,24 +49,27 @@
    text-align: center;
    padding: 10px 0px;
    border-radius: 7px;
-   transition: 0.2s;
+   transition: 0.2s ease-out;
 }
+
 .keyup{
-  background: #2a2a2a;
-  color:white;
+  background: white;
+  color:rgb(80, 80, 80);
 }
 
 .keydown{
   background: lightgrey;
-  color: #2a2a2a;
+  color: black;
 }
 
 .key:hover{
-  box-shadow: 0 0 0 0.2em rgb(0, 158, 0);
+  box-shadow: 0 0 0 0.2em rgb(197, 239, 255);
 }
 
-.key.Click{
-  box-shadow: 0 0 0 0.2em rgb(1, 68, 252);
+.key:active{
+  box-shadow: 0 0 0 0.2em rgb(157, 189, 202);
+  background: lightgrey;
+  color: black;
 }
 
 .key:nth-child(14){
