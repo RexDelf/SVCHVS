@@ -1,5 +1,38 @@
 let initMessage = "Hello World !";
 document.querySelector(".keyboard-input").value = initMessage
+let keyboardLang = 0;
+
+function initKeyBoard() {
+   if(localStorage.getItem('keyboardLang')) {
+      keyboardLang = localStorage.getItem('keyboardLang');
+   }
+   getKeys(keyboardLang);
+   let arrayDivKeys = document.querySelectorAll('.key');
+   arrayDivKeys.forEach(element => {
+   if (element.innerHTML.length === 1)
+      {
+         element.addEventListener('click', function(){
+            
+            document.querySelector(".keyboard-input").value += element.innerHTML;
+         })
+      }
+   })
+   let enter = document.querySelector(".key:nth-child(41)");
+   enter.addEventListener('click', function(){ 
+      document.querySelector(".keyboard-input").value += "\n";
+   }) 
+   let tab = document.querySelector(".key:nth-child(15)");
+   tab.addEventListener('click', function(){ 
+      document.querySelector(".keyboard-input").value += "\t";
+   }) 
+}
+window.addEventListener('load', initKeyBoard)
+
+function setLocalStorage() {
+   localStorage.setItem('keyboardLang', keyboardLang);
+}
+
+window.addEventListener('beforeunload', setLocalStorage)
 
 let arrayKeys = [
    {
@@ -51,7 +84,6 @@ function getKeys(index){
          arrayDivKey[item].innerHTML = arrayKeys[index].keys[item];
    }
 } 
-getKeys(1);
 
 addLangListener();
 
@@ -61,11 +93,13 @@ function addLangListener()
    langKey.addEventListener('click', function(){
       if (langKey.getAttribute('data-lang') === 'EN') {
          langKey.setAttribute('data-lang', 'RU')
-         getKeys(1);
+         keyboardLang = 1;
+         getKeys(keyboardLang);
       }
       else {
          langKey.setAttribute('data-lang', 'EN')
-         getKeys(0);
+         keyboardLang = 0;
+         getKeys(keyboardLang);
       }
    })
 }
@@ -110,31 +144,12 @@ function keysToLowerCase(){
    })
 }
 
-// Ввод символов
-let arrayDivKeys = document.querySelectorAll('.key');
-arrayDivKeys.forEach(element => {
-   if (element.innerHTML.length===1)
-   {
-      element.addEventListener('click', function(){
-         
-         document.querySelector(".keyboard-input").value += element.innerHTML;
-      })
-   }
-})
-
 // Удаление последнего символа
 let backspase = document.querySelector(".key:nth-child(14)");
 
 backspase.addEventListener('click', function(){
    
    document.querySelector(".keyboard-input").value = document.querySelector(".keyboard-input").value.slice(0,-1);
-})
-
-// Пробел
-let space = document.querySelector(".key:nth-child(57)");
-space.addEventListener('click', function(){
-   
-   document.querySelector(".keyboard-input").value += ' ';
 })
 
 document.addEventListener('keydown', function(event){
@@ -172,7 +187,7 @@ document.addEventListener('keydown', function(event){
    pressedKey.classList.add("keydown");
 })
 
-setInterval(() => keys={}, 500);
+setInterval(() => keys={}, 5000);
 
 var keys = {}
 document.addEventListener('keyup', function(event){
