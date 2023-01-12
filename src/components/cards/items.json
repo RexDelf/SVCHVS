@@ -1,0 +1,37 @@
+[
+    {
+        "id": 0,
+        "name": "Tecno Megabook T1 4895180791703",
+        "price": 1649,
+        "img": "https://agroup.by/upload/Sh/imageCache/351/456/456863487981197.png",
+        "count": 1
+    },
+    {
+        "id": 1,
+        "name": "Acer Aspire 3 A315-59G NX.K6WER.2",
+        "price": 1997,
+        "img": "https://shop.by/images/acer_aspire_3_a315_59_nx_k6ter_2_1.webp",
+        "count": 10
+    },
+    {
+        "id": 2,
+        "name": "IdeaPad 3 15ALC6 82KU010J",
+        "price": 1599,
+        "img": "https://rulez.by/upload/iblock/47c/47c9b4aecfa44ff69b87b3939ad99eaa.jpg",
+        "count": 12
+    },
+    {
+        "id": 3,
+        "name": "IdeaPad 3 15ABA7 82RN00C5",
+        "price": 2097,
+        "img": "https://c1.neweggimages.com/ProductImageCompressAll300/34-646-437-S03.jpg",
+        "count": 5
+    },
+    {
+        "id": 4,
+        "name": "HP ProBook 455 G8 32N90EA",
+        "price": 3090,
+        "img": "https://cdn21vek.by/img/galleries/6789/38/preview_b/probook455g832n90ea_hp_61a88c11df63c.jpeg",
+        "count": 8
+    }
+]

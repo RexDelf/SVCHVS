@@ -1,0 +1,27 @@
+.footer{
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+}
+
+.footerContainer{
+    display: flex;
+    width: 100%;
+    margin-inline: 25px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.author{
+    font-family: sans-serif;
+    letter-spacing: 0.05em;
+    font-size: 14px;
+}
+
+.github{
+    color: black;
+    font-size: 32px;
+}
